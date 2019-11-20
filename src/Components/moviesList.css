@@ -5,3 +5,14 @@ section{
     margin: 50px auto;
     grid-gap:20px
 }
+div.button{
+    width: 90%;
+    margin: 20px auto;
+}
+button{
+    padding: 10px 20px;
+    font-size: 20px;
+    background: #333333;
+    color: #dddddd;
+    margin-right: 10px;
+}

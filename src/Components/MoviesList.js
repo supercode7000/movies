@@ -18,13 +18,25 @@ class MoviesList extends Component {
         super(props);
         this.state = { movies: movies }
     }
+    handleAscending = () => {
+        console.log("ascending")
+    }
+    handleDescending = () => {
+        console.log("descending")
+    }
     render() {
         const allMovies = this.state.movies.map(movie =>
             <MovieItem key={uuid()} movies={movie} />)
         return (
-            <section>
-                {allMovies}
-            </section>
+            <main>
+                <div className="button">
+                    <button onClick={this.handleAscending}> Sort by Date Ascending</button>
+                    <button onClick={this.handleDescending}> Sort by Date Descending</button>
+                </div>
+                <section>
+                    {allMovies}
+                </section>
+            </main>
         );
     }
 }
