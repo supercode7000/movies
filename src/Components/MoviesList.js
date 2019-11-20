@@ -56,6 +56,13 @@ class MoviesList extends Component {
         });
         this.setState({ movies })
     }
+    handleAction = () => {
+        console.log('Action')
+        const movies = this.state.movies.filter(movie => {
+            return movie.genre.indexOf('Action') !== -1
+        })
+        this.setState({ movies })
+    }
     render() {
         const allMovies = this.state.movies.map(movie =>
             <MovieItem key={uuid()} movies={movie} />)
@@ -67,6 +74,7 @@ class MoviesList extends Component {
                     <button onClick={this.handleRate}>  Best Rate</button>
                     <button onClick={this.handleAToZ}>  A-Z</button>
                     <button onClick={this.handleZToA}> Z-A</button>
+                    <button onClick={this.handleAction}>Action</button>
                 </div>
                 <section>
                     {allMovies}
