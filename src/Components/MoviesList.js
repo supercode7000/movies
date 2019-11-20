@@ -20,9 +20,13 @@ class MoviesList extends Component {
     }
     handleAscending = () => {
         console.log("ascending")
+        const ascendingMovies = this.state.movies.sort((x, y) => x.year - y.year)
+        this.setState({ movies: ascendingMovies })
     }
     handleDescending = () => {
         console.log("descending")
+        const descendingMovies = this.state.movies.sort((x, y) => y.year - x.year)
+        this.setState({ movies: descendingMovies })
     }
     render() {
         const allMovies = this.state.movies.map(movie =>
